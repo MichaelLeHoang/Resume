@@ -1,0 +1,17 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+*.pdf
+
+# Local agent tooling
+.agents/
+skills-lock.json
+
+# macOS
+.DS_Store

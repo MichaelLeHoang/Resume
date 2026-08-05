@@ -1,0 +1,235 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.0in}
+\setlength{\footskip}{4.1pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge\bfseries Michael Le} \\ \vspace{1pt}
+    \small +1 226 898 0689 $|$ \href{mailto:m4le@uwaterloo.ca}{\underline{m4le@uwaterloo.ca}} $|$
+    \href{https://www.linkedin.com/in/michaellehoang/}{\underline{linkedin.com/in/michaellehoang}}
+    $|$
+    \href{https://github.com/MichaelLeHoang}{\underline{github.com/MichaelLeHoang}}
+\end{center}
+
+
+
+\vspace{-15pt}
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading
+  {Software Developer Intern}{May 2026 -- Present}
+  {WalterFedy -- Communitech}{Kitchener, ON}
+  \resumeItemListStart
+    \resumeItem{Re-architected an AI-assisted MasterFormat drafting system into a \textbf{selection-first RAG pipeline}; LLMs returned only structured keep/delete/review decisions, while deterministic assembly copied source clauses verbatim and blocked exports without complete provenance}
+    \resumeItem{Built FastAPI and Qdrant ingestion and retrieval across \textbf{4,805} architectural and mechanical specification chunks, ranking candidates by client, sector, and recency and restoring a previously truncated section from \textbf{19\% to 100\% coverage}}
+    \resumeItem{Developed a React and TypeScript review editor with line-level citations, in-place editing, deletion/restore controls, and DOCX export, ensuring every AI suggestion required human approval before issuance}
+    \resumeItem{Containerized a three-service FastAPI, React/Vite, and Qdrant stack for locked-down workstations and validated releases with \textbf{293 pytest tests}, TypeScript checks, and automated production image builds}
+  \resumeItemListEnd
+ \resumeSubHeadingListEnd
+
+\vspace{-6 pt}
+   \resumeSubHeadingListStart
+    \resumeSubheading
+  {AI Engineer Intern}{Sep 2025 -- Dec 2025}
+  {Fairstone Bank}{Toronto, ON}
+  \resumeItemListStart
+    \resumeItem{Engineered and stress-tested an OCR and LLM pipeline with Azure OpenAI, achieving \textbf{99\%+ field-extraction accuracy} across \textbf{4,000+ appraisals} and saving \textbf{160+ hours} of manual review}
+    \resumeItem{Built a secure RAG pipeline with Azure OpenAI, using UAT results to iteratively tune models and prompts against defined safety and hallucination benchmarks}
+
+  \resumeItemListEnd
+ \resumeSubHeadingListEnd
+
+ \vspace{-6 pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+  {Data Analytics Intern}{Jan 2025 -- May 2025}
+  {\href{https://my-dash-board-three.vercel.app/}{MVD Xray Technology}}{Waterloo, ON}
+  \resumeItemListStart
+    \resumeItem{Evaluated dental X-ray diagnostic reliability under limited-data conditions and built an OpenCV and Python pipeline that generated \textbf{18M+ synthetic images}, reducing data-preparation time by \textbf{40\%}}
+    \resumeItem{Delivered a Next.js dashboard on Vercel and Supabase with Leaflet.js visualizations for machine quality, applying caching and query optimizations across \textbf{18M+ rows} to reduce load times by \textbf{30\%}}
+
+  \resumeItemListEnd
+
+
+ \resumeSubHeadingListEnd
+
+\vspace{-10pt}
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+     {\href{https://financial-advisor-agent-dusky.vercel.app/}{\textbf{Quantum-Inspired Financial Advisor AI Agent}} $|$ \emph{Python, FastAPI, PyTorch, Langchain, Qdrant, Pennylane}}{}
+          \resumeItemListStart
+  \resumeItem{Architected a \textbf{5-agent consensus system} with weighted voting and a risk-veto mechanism, integrating stock prediction, FinBERT sentiment analysis, quantum portfolio optimization, and Qdrant retrieval through a FastAPI ML pipeline}
+  \resumeItem{Built and deployed a Next.js dashboard with Supabase OAuth, Stripe billing, and automated Inngest workflows for scheduled news ingestion}
+\resumeItemListEnd
+
+
+        \resumeProjectHeading
+          {\href{https://panama-canada.vercel.app/}{\textbf{Real Estate Management Platform}} $|$ \emph{Vite, React, TypeScript, Tailwind CSS, Supabase, PyTorch}}{}%
+        \resumeItemListStart
+          \resumeItem{Developed a Vite and React platform with a Tailwind CSS interface and Supabase role-based access, enabling administrators to manage \textbf{1,000+ listings}, users, and subscriptions}
+          \resumeItem{Trained and deployed a Hugging Face ViT content-moderation model with PyTorch across \textbf{15,000+ property images}, achieving \textbf{93\% detection accuracy} in production}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+% ----------Hackathon-----------
+\section{Hackathons}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+     {\href{https://www.kaggle.com/code/trlhongcng/cxc-modelling}{\textbf{Maximizing User Engagement with Machine Learning - CxC Datathon}} $|$ \emph{Python, Polars, Pytorch, Optuna}}{}
+          \resumeItemListStart
+            \resumeItem{Built a Polars and XGBoost pipeline for \textbf{50GB+} of data, achieving \textbf{0.92 accuracy} and \textbf{0.96 F1}; implemented a PyTorch BERT4Rec recommender with a \textbf{70\% hit rate} on session predictions}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
+     {\textbf{Auto Insurance Claim Prediction - ASNA Hackathon} $|$ \emph{Python, Pandas, Scikit-learn, Matplotlib, statsmodels}}{}
+          \resumeItemListStart
+            \resumeItem{Led preprocessing and feature engineering across \textbf{9,000+ insurance records}, improving a LightGBM claim-prediction model by \textbf{5\%} to \textbf{0.93 F1} across public and private datasets}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\vspace{-18pt}
+\section{Technical Skills}
+ \begin{itemize}[leftmargin = 0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, TypeScript, JavaScript, SQL, C/C++, Bash} \\
+     \textbf{Frameworks \& Libraries}{: FastAPI, React, Next.js, Vite, PyTorch, Pandas, NumPy, scikit-learn, OpenCV, TensorFlow, LangChain}\\
+     \textbf{Data \& Cloud}{: PostgreSQL, Supabase, Qdrant, Databricks, AWS (SageMaker, S3, EC2), Azure OpenAI}\\
+     \textbf{Developer Tools}{: Docker, Git, pytest, CI/CD}
+
+    }}
+ \end{itemize}
+
+%-----------QUALIFICATION-----------
+
+\vspace{-7pt}
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {Honours Bachelor of Mathematics, Major in Statistics}{Sep 2023 -- Present}
+      \small{
+        \item
+          {\textbf{Coursework}{: Object-Oriented Software Development, Probability and Statistics, Combinatorics and Optimization} }\\
+          {\textbf{Community Involvement}{: Data Science Club, Statistics Club, UW Puremath Club} } }
+
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+
+\end{document}
