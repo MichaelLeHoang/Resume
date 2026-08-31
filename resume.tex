@@ -99,6 +99,28 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+% The external wrapper defines this marker to place Education first while
+% keeping all resume content in this file.
+\newif\ifeducationfirst
+\ifdefined\ResumeEducationFirst
+  \educationfirsttrue
+\else
+  \educationfirstfalse
+\fi
+
+\newcommand{\resumeEducationSection}{%
+  \section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {Honours Bachelor of Mathematics, Major in Statistics}{Sep 2023 -- Expected Aug 2028}
+      \small{
+        \item
+          {\textbf{Coursework}{: Data Structures and Algorithms, Object-Oriented Software Development, Probability and Statistics, Combinatorics and Optimization} } }
+
+  \resumeSubHeadingListEnd
+}
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -122,17 +144,21 @@
 
 
 \vspace{-15pt}
+\ifeducationfirst
+  \resumeEducationSection
+  \vspace{-10pt}
+\fi
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
-    \resumeSubheading
-  {Software Developer Intern}{May 2026 -- Present}
-  {\href{https://www.walterfedy.com/}{WalterFedy -- Communitech}}{Kitchener, ON}
+  \resumeSubheading
+  {Software Developer Intern}{May 2026 -- Aug 2026}
+  {\href{https://www.walterfedy.com/}{WalterFedy -- Communitech/AltaML Collaboration}}{Kitchener, ON}
   \resumeItemListStart
-    \resumeItem{Re-architected an AI-assisted MasterFormat drafting system into a \textbf{selection-first RAG pipeline}; LLMs returned only structured keep/delete/review decisions, while deterministic assembly copied source clauses verbatim and blocked exports without complete provenance}
-    \resumeItem{Built FastAPI and Qdrant ingestion and retrieval across \textbf{4,805} architectural and mechanical specification chunks, ranking candidates by client, sector, and recency and restoring a previously truncated section from \textbf{19\% to 100\% coverage}}
-    \resumeItem{Developed a React and TypeScript review editor with line-level citations, in-place editing, deletion/restore controls, and DOCX export, ensuring every AI suggestion required human approval before issuance}
-    \resumeItem{Containerized a three-service FastAPI, React/Vite, and Qdrant stack for locked-down workstations and validated releases with \textbf{293 pytest tests}, TypeScript checks, and automated production image builds}
+    \resumeItem{Owned the end-to-end design, implementation, testing, and Azure deployment of a pilot specification-automation platform spanning \textbf{5 engineering disciplines}; generated draft packages in \textbf{5--15 minutes} during UAT for a workflow previously requiring approximately \textbf{72 working hours}}
+    \resumeItem{Designed a two-pass RAG and validation pipeline that restricted LLMs to structured clause decisions while deterministic Python services assembled source text verbatim, rejected unsupported replacements, and flagged coverage and cross-reference errors}
+    \resumeItem{Built FastAPI and Qdrant ingestion and retrieval over \textbf{4,805 specification chunks}, ranking results by client, sector, and recency and increasing source coverage for a truncated section from \textbf{19\% to 100\%}}
+    \resumeItem{Shipped a React and TypeScript review workflow with line-level citations, inline editing, decision tracking, and DOCX export; achieved \textbf{66.7--75\% reviewer acceptance} across 3 UAT rounds and validated releases with \textbf{293 pytest tests} and TypeScript checks}
   \resumeItemListEnd
  \resumeSubHeadingListEnd
 
@@ -143,7 +169,7 @@
   {\href{https://www.fairstone.ca/en}{Fairstone Bank}}{Toronto, ON}
   \resumeItemListStart
     \resumeItem{Engineered and stress-tested an OCR and LLM pipeline with Azure OpenAI, achieving \textbf{99\%+ field-extraction accuracy} across \textbf{4,000+ appraisals} and saving \textbf{160+ hours} of manual review}
-    \resumeItem{Built a secure RAG pipeline with Azure OpenAI, using UAT results to iteratively tune models and prompts against defined safety and hallucination benchmarks}
+    \resumeItem{Built and productionized an internal Azure OpenAI RAG chatbot, then designed UAT benchmarks for safety, hallucination rate, and retrieval quality to guide model and prompt improvements}
 
   \resumeItemListEnd
  \resumeSubHeadingListEnd
@@ -163,12 +189,21 @@
  \resumeSubHeadingListEnd
 
 \vspace{-10pt}
+%-----------VOLUNTEER EXPERIENCE-----------
+\section{Volunteer Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Data Analyst}{May 2026 -- Present}
+    {Waterloo Warriors Data Solutions Team -- Swimming}{Waterloo, ON}
+\resumeSubHeadingListEnd
+
+\vspace{-10pt}
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
-     {\href{https://financial-advisor-agent-dusky.vercel.app/}{\textbf{Quantum-Inspired Financial Advisor AI Agent}} $|$ \emph{Python, FastAPI, PyTorch, Langchain, Qdrant, Pennylane}}{}
+     {\href{https://financial-advisor-agent-dusky.vercel.app/}{\textbf{Quantum-Inspired Financial Advisor AI Agent}} $|$ \emph{Python, FastAPI, PyTorch, LangChain, Qdrant, PennyLane}}{}
           \resumeItemListStart
   \resumeItem{Architected a \textbf{5-agent consensus system} with weighted voting and a risk-veto mechanism, integrating stock prediction, FinBERT sentiment analysis, quantum portfolio optimization, and Qdrant retrieval through a FastAPI ML pipeline}
   \resumeItem{Built and deployed a Next.js dashboard with Supabase OAuth, Stripe billing, and automated Inngest workflows for scheduled news ingestion}
@@ -188,13 +223,13 @@
 \section{Hackathons}
     \resumeSubHeadingListStart
     \resumeProjectHeading
-     {\href{https://www.kaggle.com/code/trlhongcng/cxc-modelling}{\textbf{Maximizing User Engagement with Machine Learning - CxC Datathon}} $|$ \emph{Python, Polars, Pytorch, Optuna}}{}
+     {\href{https://www.kaggle.com/code/trlhongcng/cxc-modelling}{\textbf{Maximizing User Engagement with Machine Learning - CxC Datathon}} $|$ \emph{Python, Polars, PyTorch, Optuna}}{}
           \resumeItemListStart
             \resumeItem{Built a Polars and XGBoost pipeline for \textbf{50GB+} of data, achieving \textbf{0.92 accuracy} and \textbf{0.96 F1}; implemented a PyTorch BERT4Rec recommender with a \textbf{70\% hit rate} on session predictions}
           \resumeItemListEnd
 
     \resumeProjectHeading
-     {\textbf{Auto Insurance Claim Prediction - ASNA Hackathon} $|$ \emph{Python, Pandas, Scikit-learn, Matplotlib, statsmodels}}{}
+     {\textbf{Auto Insurance Claim Prediction - ASNA Hackathon} $|$ \emph{Python, Pandas, scikit-learn, Matplotlib, statsmodels}}{}
           \resumeItemListStart
             \resumeItem{Led preprocessing and feature engineering across \textbf{9,000+ insurance records}, improving a LightGBM claim-prediction model by \textbf{5\%} to \textbf{0.93 F1} across public and private datasets}
           \resumeItemListEnd
@@ -207,28 +242,20 @@
  \begin{itemize}[leftmargin = 0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Python, TypeScript, JavaScript, SQL, C/C++, Bash} \\
-     \textbf{Frameworks \& Libraries}{: FastAPI, React, Next.js, Vite, PyTorch, Pandas, NumPy, scikit-learn, OpenCV, TensorFlow, LangChain}\\
-     \textbf{Data \& Cloud}{: PostgreSQL, Supabase, Qdrant, Databricks, AWS (SageMaker, S3, EC2), Azure OpenAI}\\
-     \textbf{Developer Tools}{: Docker, Git, pytest, CI/CD}
+     \textbf{Frameworks \& Libraries}{: FastAPI, React, Next.js, PyTorch, TensorFlow, scikit-learn, OpenCV, Pandas, NumPy, LangChain}\\
+     \textbf{Data \& Cloud}{: PostgreSQL, Qdrant, Azure Container Apps, Microsoft Graph, Azure OpenAI, AWS (SageMaker, S3, EC2)}\\
+     \textbf{Tools \& Concepts}{: Docker, Git, GitHub Actions, pytest, CI/CD, REST APIs}
 
     }}
  \end{itemize}
 
 %-----------QUALIFICATION-----------
 
-\vspace{-7pt}
 %-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of Waterloo}{Waterloo, ON}
-      {Honours Bachelor of Mathematics, Major in Statistics}{Sep 2023 -- Present}
-      \small{
-        \item
-          {\textbf{Coursework}{: Object-Oriented Software Development, Probability and Statistics, Combinatorics and Optimization} }\\
-          {\textbf{Community Involvement}{: Data Science Club, Statistics Club, UW Puremath Club} } }
-
-  \resumeSubHeadingListEnd
+\ifeducationfirst\else
+  \vspace{-17pt}
+  \resumeEducationSection
+\fi
 
 %-------------------------------------------
 
