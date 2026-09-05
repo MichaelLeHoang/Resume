@@ -98,6 +98,7 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSectionGap}{\vspace{-8pt}}
 
 % The external wrapper defines this marker to place Education first while
 % keeping all resume content in this file.
@@ -119,6 +120,18 @@
           {\textbf{Coursework}{: Data Structures and Algorithms, Object-Oriented Software Development, Probability and Statistics, Combinatorics and Optimization} } }
 
   \resumeSubHeadingListEnd
+}
+
+\newcommand{\resumeTechnicalSkillsSection}{%
+  \section{Technical Skills}
+  \begin{itemize}[leftmargin = 0.15in, label={}]
+    \small{\item{
+      \textbf{Languages}{: Python, TypeScript, JavaScript, SQL, C/C++, Bash} \\
+      \textbf{Frameworks \& Libraries}{: FastAPI, React, Next.js, PyTorch, TensorFlow, scikit-learn, OpenCV, Pandas, NumPy, LangChain}\\
+      \textbf{Data \& Cloud}{: PostgreSQL, Qdrant, Azure Container Apps, Microsoft Graph, Azure OpenAI, AWS (SageMaker, S3, EC2)}\\
+      \textbf{Tools \& Concepts}{: Docker, Git, GitHub Actions, pytest, CI/CD, REST APIs}
+    }}
+  \end{itemize}
 }
 
 %-------------------------------------------
@@ -146,19 +159,21 @@
 \vspace{-15pt}
 \ifeducationfirst
   \resumeEducationSection
-  \vspace{-10pt}
+  \resumeSectionGap
+  \resumeTechnicalSkillsSection
+  \resumeSectionGap
 \fi
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
   \resumeSubheading
   {Software Developer Intern}{May 2026 -- Aug 2026}
-  {\href{https://www.walterfedy.com/}{WalterFedy -- Communitech/AltaML Collaboration}}{Kitchener, ON}
+  {\href{https://www.walterfedy.com/}{WalterFedy / Communitech--AltaML Collaboration}}{Kitchener, ON}
   \resumeItemListStart
-    \resumeItem{Owned the end-to-end design, implementation, testing, and Azure deployment of a pilot specification-automation platform spanning \textbf{5 engineering disciplines}; generated draft packages in \textbf{5--15 minutes} during UAT for a workflow previously requiring approximately \textbf{72 working hours}}
-    \resumeItem{Designed a two-pass RAG and validation pipeline that restricted LLMs to structured clause decisions while deterministic Python services assembled source text verbatim, rejected unsupported replacements, and flagged coverage and cross-reference errors}
-    \resumeItem{Built FastAPI and Qdrant ingestion and retrieval over \textbf{4,805 specification chunks}, ranking results by client, sector, and recency and increasing source coverage for a truncated section from \textbf{19\% to 100\%}}
-    \resumeItem{Shipped a React and TypeScript review workflow with line-level citations, inline editing, decision tracking, and DOCX export; achieved \textbf{66.7--75\% reviewer acceptance} across 3 UAT rounds and validated releases with \textbf{293 pytest tests} and TypeScript checks}
+    \resumeItem{Built and deployed an AI-assisted specification platform across \textbf{5 engineering disciplines}, automating initial drafting for a \textbf{${\sim}$120-hour/spec} workflow and unlocking \textbf{\$1.5M in annual engineering capacity}}
+    \resumeItem{Re-architected free-text LLM generation into a two-pass, selection-first RAG pipeline where models emit structured clause decisions and deterministic Python services enforce source-backed edits, provenance, and human approval across \textbf{293 automated tests}}
+    \resumeItem{Engineered FastAPI and Qdrant ingestion and retrieval across \textbf{4,805 specification chunks} with client-, sector-, and recency-aware ranking, improving source coverage on a truncated section from \textbf{19\% to 100\%}}
+    \resumeItem{Productionized the React and FastAPI stack on Azure with Dockerized builds, automated CI image publishing, persistent storage, and concurrency safeguards; eliminated a \textbf{30-second server-wide blocking failure} during large document uploads}
   \resumeItemListEnd
  \resumeSubHeadingListEnd
 
@@ -188,25 +203,28 @@
 
  \resumeSubHeadingListEnd
 
-\vspace{-10pt}
+\resumeSectionGap
 %-----------VOLUNTEER EXPERIENCE-----------
 \section{Volunteer Experience}
 \resumeSubHeadingListStart
   \resumeSubheading
     {Data Analyst}{May 2026 -- Present}
     {Waterloo Warriors Data Solutions Team -- Swimming}{Waterloo, ON}
+  \resumeItemListStart
+    \resumeItem{Building a TritonWear multi-camera/wearable-sensor pipeline for synchronized swimmer tracking and ML-ready annotation}
+  \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-\vspace{-10pt}
+\resumeSectionGap
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
-     {\href{https://financial-advisor-agent-dusky.vercel.app/}{\textbf{Quantum-Inspired Financial Advisor AI Agent}} $|$ \emph{Python, FastAPI, PyTorch, LangChain, Qdrant, PennyLane}}{}
+     {\href{https://financial-advisor-agent-dusky.vercel.app/}{\textbf{AI Financial Research Platform}} $|$ \emph{Python, FastAPI, PyTorch, Qdrant, PennyLane, Next.js}}{}
           \resumeItemListStart
-  \resumeItem{Architected a \textbf{5-agent consensus system} with weighted voting and a risk-veto mechanism, integrating stock prediction, FinBERT sentiment analysis, quantum portfolio optimization, and Qdrant retrieval through a FastAPI ML pipeline}
-  \resumeItem{Built and deployed a Next.js dashboard with Supabase OAuth, Stripe billing, and automated Inngest workflows for scheduled news ingestion}
+  \resumeItem{Architected a \textbf{5-agent financial research system} with weighted consensus and risk veto, integrating stock forecasting, FinBERT sentiment, portfolio optimization, and Qdrant retrieval through a FastAPI ML pipeline}
+  \resumeItem{Built and deployed a Next.js SaaS platform with Supabase OAuth, Stripe billing, and scheduled Inngest workflows; implemented GitHub Actions CI/CD for automated testing, builds, and deployment}
 \resumeItemListEnd
 
 
@@ -218,7 +236,7 @@
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd
-\vspace{-15pt}
+\resumeSectionGap
 % ----------Hackathon-----------
 \section{Hackathons}
     \resumeSubHeadingListStart
@@ -237,23 +255,16 @@
 
 %
 %-----------PROGRAMMING SKILLS-----------
-\vspace{-18pt}
-\section{Technical Skills}
- \begin{itemize}[leftmargin = 0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Python, TypeScript, JavaScript, SQL, C/C++, Bash} \\
-     \textbf{Frameworks \& Libraries}{: FastAPI, React, Next.js, PyTorch, TensorFlow, scikit-learn, OpenCV, Pandas, NumPy, LangChain}\\
-     \textbf{Data \& Cloud}{: PostgreSQL, Qdrant, Azure Container Apps, Microsoft Graph, Azure OpenAI, AWS (SageMaker, S3, EC2)}\\
-     \textbf{Tools \& Concepts}{: Docker, Git, GitHub Actions, pytest, CI/CD, REST APIs}
-
-    }}
- \end{itemize}
+\ifeducationfirst\else
+  \resumeSectionGap
+  \resumeTechnicalSkillsSection
+\fi
 
 %-----------QUALIFICATION-----------
 
 %-----------EDUCATION-----------
 \ifeducationfirst\else
-  \vspace{-17pt}
+  \resumeSectionGap
   \resumeEducationSection
 \fi
 
